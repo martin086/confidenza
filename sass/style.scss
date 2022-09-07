@@ -1,0 +1,603 @@
+$color_1: whitesmoke;
+$color_2: orange;
+$color_3: black;
+$font-family_1: 'Poppins', sans-serif;
+$background-color_1: #323234;
+$background-color_2: #2f4ccc;
+$background-color_3: black;
+$background-color_4: orange;
+$border-color_1: orange;
+
+@mixin pantalla($size) {
+	@if $size == mobile {
+		@media (max-width: 480px) { @content; }
+	} @else if $size == tablet {
+		@media (min-width: 481px) { @content; }
+	} @else if $size == desktop {
+		@media (min-width: 768px) { @content; }
+	}
+}
+
+html {
+	padding: 0;
+	margin: 0;
+}
+body {
+	padding: 0;
+	margin: 0;
+	font-family: $font-family_1;
+	background-color: $background-color_1;
+	color: $color_1;
+}
+* {
+	box-sizing: border-box;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+h2 {
+	text-transform: uppercase;
+	text-align: center;
+	margin: 10px auto;
+	padding: 20px auto;
+	text-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
+}
+::-webkit-scrollbar {
+	background-color: lightgrey;
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgb(120, 120, 120);
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+.header__logo {
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	img {
+		width: 100%;
+		margin: auto;
+	}
+}
+.header {
+	h1 {
+		text-transform: uppercase;
+		text-align: center;
+		display: flex;
+		font-size: xx-large;
+		padding: 0 5px;
+		margin: 0 1px;
+	}
+}
+.navbar {
+	background-image: linear-gradient(to bottom, #2f4ccc 90%, transparent 100%);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: medium;
+	transition-property: color;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0s;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	div {
+		li {
+			a {
+				color: $color_1;
+				&:hover {
+					color: $color_2;
+					text-decoration: underline;
+					text-transform: uppercase;
+					font-size: medium;
+				}
+			}
+		}
+	}
+}
+.productos_menu {
+	color: $color_3 !important;
+}
+.barra_logo {
+	color: $color_1;
+}
+.texto_slider {
+	bottom: 45%;
+}
+.productos {
+	background-color: $background-color_2;
+	padding-top: 1%;
+	padding-bottom: 40%;
+	width: 100%;
+	margin-bottom: 5%;
+	p {
+		text-align: center;
+	}
+	@include pantalla(tablet){
+		padding-bottom: 15%;
+	}
+	@include pantalla(desktop){
+		padding-bottom: 5;
+	}
+}
+.productos__grid {
+	width: 100%;
+	margin: auto;
+	padding: 4%;
+	display: grid;
+	grid-row-gap: 1%;
+	grid-column-gap: 4%;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(12, 100px);
+	grid-template-areas: "cobre" "aislacion" "gases" "cable" "manguera" "cinta" "mensulas" "compresores" "herramientas" "accesorios" "varios" "aireacondicionado";
+	>div {
+		display: flex;
+		justify-content: center;
+		align-items: inherit;
+	}
+	a {
+		color: $color_1;
+		font-size: 1.8em;
+		text-decoration: none;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		border-radius: 10px;
+		box-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
+		&:hover {
+			opacity: 0.5;
+			transform: scale(1.1);
+		}
+		span {
+			text-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
+			&:hover {
+				transform: scale(1.3);
+			}
+		}
+	}
+	@include pantalla(tablet) {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(6, 300px);
+		grid-template-areas: "cobre aislacion" "gases cable" "manguera cinta" "mensulas compresores" "herramientas accesorios" "varios aireacondicionado";
+	}
+	@include pantalla(desktop) {
+		grid-row-gap: 2%;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: repeat(4, 300px);
+		grid-template-areas: "cobre aislacion gases" "cable manguera cinta" "mensulas compresores herramientas" "accesorios varios aireacondicionado";
+	}
+}
+.productos__cobre {
+	grid-area: cobre;
+	a {
+		background-image: url("../assets/productos/01-cobre.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__aislacion {
+	grid-area: aislacion;
+	a {
+		background-image: url("../assets/productos/02-aislacion.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__gases {
+	grid-area: gases;
+	a {
+		background-image: url("../assets/productos/03-gases.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__cable {
+	grid-area: cable;
+	a {
+		background-image: url("../assets/productos/04-cable.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__manguera {
+	grid-area: manguera;
+	a {
+		background-image: url("../assets/productos/05-manguera.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__cinta {
+	grid-area: cinta;
+	a {
+		background-image: url("../assets/productos/06-cinta.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__mensulas {
+	grid-area: mensulas;
+	a {
+		background-image: url("../assets/productos/07-mensulas.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__compresores {
+	grid-area: compresores;
+	a {
+		background-image: url("../assets/productos/08-compresores.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__herramientas {
+	grid-area: herramientas;
+	a {
+		background-image: url("../assets/productos/09-herramientas.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__accesorios {
+	grid-area: accesorios;
+	a {
+		background-image: url("../assets/productos/10-accesorios.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__varios {
+	grid-area: varios;
+	a {
+		background-image: url("../assets/productos/11-varios.jpg");
+		background-size: 100% auto;
+	}
+}
+.productos__aireacondicionado {
+	grid-area: aireacondicionado;
+	a {
+		background-image: url("../assets/productos/12-aireacondicionado.jpg");
+		background-size: 100% auto;
+	}
+}
+.video__container {
+	position: relative;
+	overflow: hidden;
+	padding-top: 56.25%;
+}
+.video__iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.horarios {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-content: space-around;
+	p {
+		text-align: center;
+		text-transform: none;
+	}
+	div {
+		display: flex;
+		justify-content: flex-start;
+		align-content: center;
+		padding-bottom: 4%;
+	}
+	.tabla {
+		background-color: $background-color_3;
+		text-transform: uppercase;
+		text-align: center;
+		margin: auto;
+		max-width: 75%;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+		border-radius: 5px;
+	}
+}
+.tabla {
+	tr {
+		td {
+			border-top: 1px;
+			border-color: $border-color_1;
+			border-style: solid;
+			border-left: none;
+			border-right: none;
+			border-bottom: none;
+		}
+	}
+}
+.contacto__grid {
+	width: 100%;
+	margin: auto;
+	padding: 1% 4% 4% 4%;
+	background-color: $background-color_2;
+	display: grid;
+	grid-row-gap: 1%;
+	grid-column-gap: 4%;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: "mapa mapa" "formulario formulario";
+	@include pantalla(desktop) {
+		grid-row-gap: 4%;
+		grid-template-areas: "mapa formulario" "mapa formulario";
+	}
+}
+.map__container {
+	grid-area: mapa;
+	position: relative;
+	overflow: hidden;
+	padding-top: 75%;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	border-radius: 5px;
+}
+.form {
+	grid-area: formulario;
+	display: flex;
+	padding: 2% 4%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	label {
+		width: 100%;
+	}
+	div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: space-around;
+		padding-top: 3%;
+		font-size: larger;
+	}
+	input {
+		display: inline-block;
+		width: 100%;
+	}
+	p {
+		font-weight: 800;
+		font-size: x-large;
+	}
+}
+.contacto {
+	background-color: $background-color_2;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+.map__iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.motivacion {
+	background-color: $background-color_1;
+	margin: auto;
+	position: relative;
+	h2 {
+		z-index: 1;
+		position: inherit;
+		margin-bottom: 1%;
+		text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	}
+}
+.cont_motivacion {
+	position: relative;
+	overflow: hidden;
+	padding-top: 56.25%;
+	div {
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 75%;
+			border: 0;
+		}
+	}
+	
+}
+.frases {
+	text-transform: uppercase;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: calc(0.5rem + 1vw);
+	font-weight: 200;
+	backdrop-filter: blur(14px) brightness(80%);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 75%;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	z-index: 1;
+	p {
+		padding: 0 1%;
+		margin-bottom: 0rem;
+	}
+	.calidad {
+		color: black;
+		font-weight: bold;
+	}
+	@include pantalla(tablet){
+		font-size: calc(0.65rem + 1vw);
+	}
+	@include pantalla(desktop){
+		font-size: calc(0.75rem + 1vw);
+	}
+}
+.footer {
+	background-color: $background-color_1;
+	text-transform: uppercase;
+	display: flex;
+	flex-flow: column nowrap;
+	font-size: 12px;
+	align-items: center;
+	position: relative;
+	bottom: 0;
+	margin-top: -8%;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	h3 {
+		font-size: calc(0.75em + 1vw);
+	}
+	small {
+		display: flex;
+		margin: 1% 1%;
+	}
+}
+.footer__items {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	width: 100%;
+	flex: auto;
+	margin: 5px auto;
+	text-align: center;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	div {
+		width: 100%;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-content: center;
+		border-top: 1px solid whitesmoke;
+		flex: auto;
+		margin: 5px auto;
+		text-align: center;
+		padding-top: 2%;
+		ul {
+			li {
+				img {
+					width: 55%;
+				}
+			}
+		}
+	}
+	ul {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+	}
+	a {
+		color: $color_1;
+		text-decoration: none;
+		font-size: calc(0.5em + 1vw);
+		margin: auto;
+	}
+	p {
+		color: $color_1;
+		text-decoration: none;
+		font-size: calc(0.5em + 1vw);
+		margin: auto;
+	}
+	.socio {
+		border: 1px solid $border-color_1;
+		padding: 1% 1%;
+		margin: 0 10%;
+		color: $color_2;
+	}
+	@include pantalla(tablet) {
+		flex-flow: row nowrap;
+		div {
+			border-top: none;
+			border-right: 1px solid whitesmoke;
+		}
+	}
+}
+.footer__logo {
+	img {
+		width: 30%;
+		margin: auto;
+	}
+	@include pantalla(tablet) {
+		img {
+			width: 40%;
+		}
+	}
+}
+.portal {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-evenly;
+	align-content: flex-start;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	.bienvenido {
+		padding: 3%;
+		text-transform: uppercase;
+		border: 1px solid $border-color_1;
+		border-radius: 5px;
+	}
+	.row {
+		margin-top: 1%;
+		padding-top: 1%;
+	}
+	.ingreso__form {
+		margin-top: 2%;
+	}
+	h2 {
+		text-decoration: underline;
+		margin: 0 0 5% 0;
+		padding: 2% 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	@include pantalla(tablet) {
+		margin: auto;
+		width: 100%;
+	}
+	@include pantalla(desktop) {
+		margin: auto;
+		width: 100%;
+		font-size: larger;
+	}
+}
+.portal__items {
+	grid-area: items;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	flex: 1;
+}
+
+.ingreso__items {
+	ul {
+		li {
+			display: flex;
+			font-style: italic;
+			font-size: large;
+			padding-left: 2%;
+			justify-content: flex-start;
+		}
+	}
+	h3 {
+		font-size: x-large;
+	}
+}
+.ingreso__form {
+	input {
+		display: flex;
+		color: $color_1;
+		font-size: medium;
+		font-family: $font-family_1;
+		font-weight: inherit;
+		text-transform: inherit;
+		background-color: $background-color_4;
+	}
+}
+
+.thank_you,
+.error {
+	padding-left: 2%;
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="climatización, refrigeración, aire acondicionado, instalaciones, mantenimiento, venta de insumos, cobre"/>
+    <meta name="description" content="Climatización y refrigeración. Todo en un solo lugar."/>
+    <title>Confidenza SRL</title>
+    <!--Link a Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!--Link de BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!--Favicon-->
+    <link rel="icon" href="assets/icons/favicon.ico">
+    <!--Link de CSS-->
+    <link rel="stylesheet" href="sass/style.css">
+</head>
+<body>
+    <header class="header sticky-top">
+        <nav class="navbar sticky-top navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand barra_logo" href="index.html">
+                    <img src="assets/logo.png" alt="LogoConfidenza" title="Logo Confidenza" class="d-inline-block align-text-center"/> 
+                    Refrigeración
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__cobre">cobre</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__aislacion">aislacion</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__gases">gases</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__cable">cable</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__manguera">manguera</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__cinta">cinta</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__mensulas">mensulas</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__compresores">compresores</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__herramientas">herramientas</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__accesorios">accesorios</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__varios">varios</a></li>
+                                <li><a class="dropdown-item anchor-link productos_menu" href="#productos__aireacondicionado">aire acondicionado</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link anchor-link" href="#horarios">Horarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link anchor-link" href="#contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ingresar.html">Ingresar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="slider">
+            <div id="carouseltc" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/slider/slider1.png" class="d-block w-100" alt="Banner Marcas" title="Banner Marcas"/>
+                        <div class="carousel-caption d-none d-md-block texto_slider">
+                            <h1 class="fw-bolder text-uppercase">¡Bienvenido a nuestra tienda!</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/slider/slider2.png" class="d-block w-100" alt="Banner Marcas" title="Banner Marcas"/>
+                        <div class="carousel-caption d-none d-md-block texto_slider">
+                            <h2 class="fw-bolder text-uppercase">Climatización y Refrigeración</h2>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/slider/slider3.png" class="d-block w-100" alt="Banner Marcas" title="Banner Marcas"/>
+                        <div class="carousel-caption d-none d-md-block texto_slider">
+                            <h2 class="fw-bolder text-uppercase">Todo en un solo lugar</h2>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/slider/slider4.png" class="d-block w-100" alt="Banner Marcas" title="Banner Marcas"/>
+                        <div class="carousel-caption d-none d-md-block texto_slider">
+                            <h2 class="fw-bolder text-uppercase">Venta mayorista y minorista</h2>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouseltc" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouseltc" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <section id="productos" class="productos">
+            <h2>Productos</h2>
+            <p>Todos los productos e insumos que necesitas, en un solo lugar. Marcas líderes y alternativas. ¿Qué estás esperando?</p>
+            <div class="productos__grid">
+                <div id="productos__cobre" class="productos__cobre"><a href="error404.html"><span>Cobre</span></a></div>
+                <div id="productos__aislacion" class="productos__aislacion"><a href="error404.html"><span>Aislación</span></a></div>
+                <div id="productos__gases" class="productos__gases"><a href="error404.html"><span>Gases</span></a></div>
+                <div id="productos__cable" class="productos__cable"><a href="error404.html"><span>Cable</span></a></div>
+                <div id="productos__manguera" class="productos__manguera"><a href="error404.html"><span>Manguera</span></a></div>
+                <div id="productos__cinta" class="productos__cinta"><a href="error404.html"><span>Cintas</span></a></div>
+                <div id="productos__mensulas" class="productos__mensulas"><a href="error404.html"><span>Ménsulas</span></a></div>
+                <div id="productos__compresores" class="productos__compresores"><a href="error404.html"><span>Compresores</span></a></div>
+                <div id="productos__herramientas" class="productos__herramientas"><a href="error404.html"><span>Herramientas</span></a></div>
+                <div id="productos__accesorios" class="productos__accesorios"><a href="error404.html"><span>Accesorios</span></a></div>
+                <div id="productos__varios" class="productos__varios"><a href="error404.html"><span>Varios</span></a></div>
+                <div id="productos__aireacondicionado" class="productos__aireacondicionado"><a href="error404.html"><span>Aire Acondicionado</span></a></div>
+            </div>            
+        </section>
+        <section class="video">
+            <div class="video__container">
+                <iframe class="video__iframe" src="https://www.youtube.com/embed/yWMQRifpT9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; muted" allowfullscreen></iframe>
+            </div>
+        </section>
+        <section id="horarios" class="horarios">
+            <h2>Horarios</h2>
+            <p>Nuestro local de venta al público se encuentra abierto de lunes a viernes de 9 a 18hs y los días sábados de 9 a 13hs.</p>
+            <div class="table-responsive">
+                <table class="table tabla table-dark table-hover" cellpadding="3" cellspacing="3">
+                    <tr>
+                        <th></th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                        <th>Sábado</th>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>abierto</td>
+                        <td>abierto</td>
+                        <td>abierto</td>
+                        <td>abierto</td>
+                        <td>abierto</td>
+                        <td>abierto</td>
+                    </tr>
+                    <tr>
+                        <td>13:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>cerrado</td>
+                    </tr>
+                    <tr>
+                        <td>18:00</td>
+                        <td>cerrado</td>
+                        <td>cerrado</td>
+                        <td>cerrado</td>
+                        <td>cerrado</td>
+                        <td>cerrado</td>
+                        <td></td>
+                    </tr>            
+                </table>
+            </div>
+        </section>
+        <section id="contacto" class="contacto">
+            <h2 class="contacto__h2">Contacto</h2>
+            <div class="contacto__grid">
+                <div class="map__container">
+                    <iframe class="map__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2760.288862993387!2d-58.51729145700539!3d-34.64068023205634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc84eb3ba8753%3A0xf9afe94f8456e8a3!2sAv.%20Larraz%C3%A1bal%20100%2C%20C1408HEN%20CABA!5e0!3m2!1ses!2sar!4v1657219678007!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="form">
+                    <form action="thank_you.html" target="_blank">
+                        <p>Dejanos tu mensaje y te contactaremos a la brevedad.</p>
+                        <div>
+                            <label>
+                                Nombre:
+                                <input type="text" class="form-control" placeholder="Nombre y Apellido" name="nombre"/>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                E-mail:
+                                <input type="email" class="form-control" placeholder="Correo" name="email" required/>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                Asunto:
+                                <input type="text" class="form-control" placeholder="Asunto" name="asunto"/>
+                            </label>
+                        </div>
+                        <div>
+                            <textarea class="form-control" placeholder="Mensaje" name="mensaje" required></textarea>
+                        </div>
+                        <div>
+                            <input type="submit" class="form-control" value="Enviar Mensaje"/> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="motivacion">
+            <h2>Seguínos</h2>
+            <div class="cont_motivacion">
+                <div class="frases">
+                    <p>Caño de Cobre.</p>
+                    <p>Aislación elastomérica.</p>
+                    <p>Gases Refrigerantes.</p>
+                    <p>Cable taller normalizado.</p>
+                    <p>Manguera cristal.</p>
+                    <p>Cintas de PVC.</p>
+                    <p>Ménsulas reforzadas.</p>
+                    <p>Compresores.</p>
+                    <p>Herramientas.</p>
+                    <p>Instrumentos.</p>
+                    <p>Válvulas.</p>
+                    <p>Controles.</p>
+                    <p>Fijaciones.</p>
+                    <p>Químicos.</p>
+                    <p>Accesorios.</p>
+                    <p>Material eléctrico.</p>
+                    <p>Insumos.</p>
+                    <p>Servicio.</p>
+                    <p>Asesoramiento.</p>
+                    <p>Atención de primera.</p>
+                    <p class="calidad">Calidad.</p>
+                </div>
+                <div>
+                    <img src="assets/redes.png" alt="Redes" title="Banner Redes"/>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__items">
+            <div class="footer__logo">
+                <img src="assets/logo.png" alt="TeraClub" title="TeraClub"/>
+            </div>
+            <div>
+                <h3>Teléfonos</h3>
+                <a href="tel:1140005000">+54 11 40005000</a>
+                <a href="tel:1140006000">+54 11 40006000</a>
+            </div>    
+            <div>
+                <h3>Dirección</h3>
+                <p>Av. Larrazabal 100, CABA
+                </p>
+            </div>    
+            <div>
+                <h3>Seguínos</h3>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank"><img src="assets/redes/facebook.png" alt="Facebook" title="Facebook"/></a></li>
+                    <li><a href="https://instagram.com" target="_blank"><img src="assets/redes/instagram.png" alt="Instagram" title="Instagram"/></a></li>
+                    <li><a href="https://youtube.com" target="_blank"><img src="assets/redes/youtube.png" alt="YouTube" title="Youtube"/></a></li>
+                </ul>
+            </div>
+            <div>
+                <a class="socio" href="#contacto">CONTACTANOS</a>
+            </div>
+        </div>
+        <small> Copyright 2022 - Martin Suarez</small>
+    </footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="scripts/navbar-collapse.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
