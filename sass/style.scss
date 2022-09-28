@@ -138,13 +138,15 @@ h2 {
 		align-items: inherit;
 	}
 	a {
-		color: $color_1;
+		color: $color_2;
 		font-size: 1.8em;
+		font-weight: 700;
 		text-decoration: none;
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background-color: white;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
