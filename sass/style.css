@@ -541,6 +541,12 @@ h2 {
     border-bottom-right-radius: 16px; } }
 
 /*Sección Productos*/
+.card_container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 0.9em; }
+
 .card {
   color: black; }
 

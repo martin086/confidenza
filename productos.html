@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!--Link de Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!--Link de BootStrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!--Favicon-->
@@ -23,9 +25,10 @@
         <nav class="navbar sticky-top navbar-expand-md">
             <div class="container-fluid">
                 <a class="navbar-brand barra_logo" href="index.html">
-                    <img src="assets/logo.png" alt="LogoConfidenza" title="Logo Confidenza" class="d-inline-block align-text-center"/> 
+                    <img src="assets/logo.png" alt="LogoConfidenza" title="Logo Confidenza" class="d-inline-block align-text-center"/>
                     Refrigeración
                 </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -80,98 +83,98 @@
                     </a>
                 </div>
                 <div class="flex-grow-1 d-flex align-items-center">
-                    <form class="w-100 me-3">
-                        <input type="search" class="form-control" placeholder="Buscar Producto...">
+                    <form class="container-fluid w-100 me-3">
+                        <input id="search" type="search" class="form-control" placeholder="Buscar Producto...">
                     </form>
-                    <div class="flex-shrink-0 dropdown">
-                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://via.placeholder.com/28?text=!" alt="user" width="32" height="32" class="rounded-circle">
+                    <div class="flex-shrink-0 dropdown bg-light border border-white rounded">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" width="32px" height="32px" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser2">
-                            <li><a class="dropdown-item" href="#">Search</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="./carrito.html">Ir al Carrito</a></li>
+                            <li><a class="dropdown-item" href="#">Configuración</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>Usuario</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                            <li><a class="dropdown-item" href="#">Log out</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
-            <div class="row flex-grow-sm-1 flex-grow-0">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column overflow-auto">
+            <div class="container-fluid row flex-grow-sm-1 flex-grow-0">
                 <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 pb-sm-0 pb-3">
                     <div class="bg-light border rounded-3 p-1 h-100">
-                        <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                        <ul class="nav nav-pills flex-sm-column mb-auto justify-content-between text-truncate">
                             <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Caño de Cobre</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Aislación Elastomérica</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Gases Refrigerantes</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Cable Taller</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Manguera Cristal</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Cinta de PVC</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Ménsulas Reforzadas</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Motocompresores</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Herramientas</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Acces. p/ Instalaciones</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Varios</span>
                                 </a>
                             </li>
                             <hr class = "border border-primary my-1"/>
-                            <li>
+                            <li class="productos__sidebar nav-item">
                                 <a href="#" class="nav-link px-2 text-truncate">
                                     <span class="d-none d-sm-inline">Aire Acondicionado</span>
                                 </a>
@@ -180,70 +183,22 @@
                     </div>
                 </aside>
                 <main class="col overflow-auto h-100">
-                    <div class="row bg-light border rounded-3 p-3">
-                        <h2 class="text-bg-primary">Productos</h2>
-                        <div class="card col" style="width: 18rem;">
-                            <img src="./assets/productos/01-cobre.jpg" class="card-img-top" alt="cobre">
-                            <div class="card-body">
-                                <h5 class="card-title">Caño de Cobre x 1/4"</h5>
-                                <p class="card-text">Precio x mt. = $1000</p>
-                                <a href="#" class="btn btn-primary">Agregar</a>
-                            </div>
-                        </div>
-                        <div class="card col" style="width: 18rem;">
-                            <img src="./assets/productos/01-cobre.jpg" class="card-img-top" alt="cobre">
-                            <div class="card-body">
-                                <h5 class="card-title">Caño de Cobre x 5/16"</h5>
-                                <p class="card-text">Precio x mt. = $1500</p>
-                                <a href="#" class="btn btn-primary">Agregar</a>
-                            </div>
-                        </div>
-                        <div class="card col" style="width: 18rem;">
-                            <img src="./assets/productos/01-cobre.jpg" class="card-img-top" alt="cobre">
-                            <div class="card-body">
-                                <h5 class="card-title">Caño de Cobre x 3/8"</h5>
-                                <p class="card-text">Precio x mt. = $2000</p>
-                                <a href="#" class="btn btn-primary">Agregar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row bg-light border rounded-3 p-3">
-                        <div class="card col" style="width: 18rem;">
-                            <img src="./assets/productos/01-cobre.jpg" class="card-img-top" alt="cobre">
-                            <div class="card-body">
-                                <h5 class="card-title">Caño de Cobre x 1/2"</h5>
-                                <p class="card-text">Precio x mt. = $2500</p>
-                                <a href="#" class="btn btn-primary">Agregar</a>
-                            </div>
-                        </div>
-                        <div class="card col" style="width: 18rem;">
-                            <img src="./assets/productos/01-cobre.jpg" class="card-img-top" alt="cobre">
-                            <div class="card-body">
-                                <h5 class="card-title">Caño de Cobre x 5/8"</h5>
-                                <p class="card-text">Precio x mt. = $3000</p>
-                                <a href="#" class="btn btn-primary">Agregar</a>
-                            </div>
-                        </div>
-                        <div class="card col" style="width: 18rem;">
-                            <img src="./assets/productos/01-cobre.jpg" class="card-img-top" alt="cobre">
-                            <div class="card-body">
-                                <h5 class="card-title">Caño de Cobre x 3/4"</h5>
-                                <p class="card-text">Precio x mt. = $3500</p>
-                                <a href="#" class="btn btn-primary">Agregar</a>
-                            </div>
-                        </div>
-                    </div>    
+                    <div class="bg-light border rounded-3 p-3">
+                        <div id="canvas" class="card_container"></div>
+                    </div> 
+                        <div id="canvas" class="card_container"></div>
                         <hr />
                         <h4><a href="./carrito.html">Ir al Carrito</a></h4>
                         <hr />
-                    
                 </main>
             </div>
         </div>
     
+    
+    <script src="scripts/navbar-collapse.js"></script>
+    <script src="scripts/productos.js"></script>
+    <script src="scripts/search.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="scripts/navbar-collapse.js"></script>
-    <script src="scripts/main.js"></script>
 </body>
 </html>
