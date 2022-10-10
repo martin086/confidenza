@@ -596,11 +596,11 @@ const productos = [
     },
 ]
 
-const producto = document.getElementById("canvas");
+const catalogoDefault = document.getElementById("canvas");
 
 const catalogo = ()=>{
     for (let producto of productos) {
-        producto.innerHTML += `
+        catalogoDefault.innerHTML += `
         <div class="card" style="width: 18rem;" id="canvas">
             <img src=${producto.imagen} class="card-img-top" alt="...">
             <div class="card-body">

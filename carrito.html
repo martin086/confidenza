@@ -203,36 +203,31 @@
                             <hr class="my-4">
           
                             <div class="d-flex justify-content-between mb-4">
-                              <h5 class="text-uppercase">items 3</h5>
-                              <h5>$ 132.00</h5>
+                              <h5 id="etiquetaitems" class="text-uppercase">items x 3</h5>
+                              <h5 id="subtotalitems">$ 132.00</h5>
                             </div>
           
-                            <h5 class="text-uppercase mb-3">Envío</h5>
-          
-                            <div class="mb-4 pb-2">
-                              <select class="select">
+                            <div class="d-flex justify-content-between mb-4 pb-2">
+                              <h5 class="text-uppercase">Envío</h5>
+                              <select id="envioSelect" class="select">
                                 <option value="1">Envío Estándar - $5</option>
                                 <option value="2">Envío Inmediato - $10</option>
                               </select>
                             </div>
           
-                            <h5 class="text-uppercase mb-3">Cupón</h5>
-          
-                            <div class="mb-5">
-                              <div class="form-outline">
-                                <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                                <label class="form-label" for="form3Examplea2">Ingresá tu código</label>
-                              </div>
+                            <div class="d-flex justify-content-between mb-4">
+                              <h5 class="text-uppercase mb-3">IVA (21%)</h5>
+                              <h5 id="iva">$ 28.77</h5>
                             </div>
           
                             <hr class="my-4">
           
                             <div class="d-flex justify-content-between mb-5">
                               <h5 class="text-uppercase">Total</h5>
-                              <h5>$ 137.00</h5>
+                              <h5 id="total">$ 165.77</h5>
                             </div>
           
-                            <button type="button" class="btn btn-dark btn-block btn-lg"
+                            <button id="checkoutBtn" type="button" class="btn btn-dark btn-block btn-lg"
                               data-mdb-ripple-color="dark">Checkout</button>
           
                           </div>
@@ -245,9 +240,11 @@
             </div>
           </section>
     </main>
+    <script src="./scripts/navbar-collapse.js"></script>
+    <script src="./scripts/productos.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script src="./scripts/carrito.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="scripts/navbar-collapse.js"></script>
-    <script src="scripts/main.js"></script>
 </body>
 </html>
