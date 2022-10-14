@@ -1,8 +1,16 @@
 let carrito = [];
 const moneda = "$";
-const DOMitems = document.querySelector('#items');
-const DOMcarrito = document.querySelector('#carrito');
-const DOMtotal = document.querySelector('#total');
-const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+const carritoItems = document.getElementById('carritoItems');
+const iva = document.getElementById('iva');
+const total = document.getElementById('total');
+const vaciarBtn = document.getElementById('vaciarBtn');
+const agregarBtn = document.getElementById('agregarBtn');
+
+
+agregarBtn.addEventListener('click', agregarProductoAlCarrito);
 
 //Funciones
+//Añadir un producto al carrito
+function agregarProductoAlCarrito(event) {
+    carrito.push
+}

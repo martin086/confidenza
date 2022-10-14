@@ -598,7 +598,7 @@ const productos = [
 
 const catalogoDefault = document.getElementById("canvas");
 
-const catalogo = ()=>{
+const renderizarCatalogo = ()=>{
     for (let producto of productos) {
         catalogoDefault.innerHTML += `
         <div class="card" style="width: 18rem;" id="canvas">
@@ -606,7 +606,7 @@ const catalogo = ()=>{
             <div class="card-body">
                 <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
                 <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
-                <a href="#" class="btn btn-primary">Agregar</a>
+                <a id="agregarBtn" href="#" class="btn btn-primary">Agregar</a>
             </div>
         </div>
         `
