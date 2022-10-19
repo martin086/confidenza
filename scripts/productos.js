@@ -7,6 +7,7 @@ const productos = [
         tipo: '1/4"',
         precio: 1072,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
@@ -16,6 +17,7 @@ const productos = [
         tipo: '5/16"',
         precio: 1353,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
@@ -25,6 +27,7 @@ const productos = [
         tipo: '3/8"',
         precio: 1707,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
@@ -34,6 +37,7 @@ const productos = [
         tipo: '1/2"',
         precio: 2309,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
@@ -43,6 +47,7 @@ const productos = [
         tipo: '5/8"',
         precio: 2975,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
@@ -52,6 +57,7 @@ const productos = [
         tipo: '3/4"',
         precio: 3415,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
@@ -61,6 +67,7 @@ const productos = [
         tipo: '1/4"',
         precio: 495,
         unidad: 'tira',
+        cantidad: 1,
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
@@ -70,6 +77,7 @@ const productos = [
         tipo: '5/16"',
         precio: 500,
         unidad: 'tira',
+        cantidad: 1,
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
@@ -79,6 +87,7 @@ const productos = [
         tipo: '3/8"',
         precio: 530,
         unidad: 'tira',
+        cantidad: 1,
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
@@ -88,6 +97,7 @@ const productos = [
         tipo: '1/2"',
         precio: 600,
         unidad: 'tira',
+        cantidad: 1,
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
@@ -97,6 +107,7 @@ const productos = [
         tipo: '5/8"',
         precio: 670,
         unidad: 'tira',
+        cantidad: 1,
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
@@ -106,6 +117,7 @@ const productos = [
         tipo: '3/4"',
         precio: 740,
         unidad: 'tira',
+        cantidad: 1,
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
@@ -115,6 +127,7 @@ const productos = [
         tipo: 'R22',
         precio: 7940,
         unidad: 'cápsula',
+        cantidad: 1,
         imagen: './assets/productos/03-gases.jpg',
     },
     {
@@ -124,6 +137,7 @@ const productos = [
         tipo: 'R410',
         precio: 3780,
         unidad: 'cápsula',
+        cantidad: 1,
         imagen: './assets/productos/03-gases.jpg',
     },
     {
@@ -133,6 +147,7 @@ const productos = [
         tipo: 'R134',
         precio: 3230,
         unidad: 'cápsula',
+        cantidad: 1,
         imagen: './assets/productos/03-gases.jpg',
     },
     {
@@ -142,6 +157,7 @@ const productos = [
         tipo: 'R404',
         precio: 4155,
         unidad: 'cápsula',
+        cantidad: 1,
         imagen: './assets/productos/03-gases.jpg',
     },
     {
@@ -151,6 +167,7 @@ const productos = [
         tipo: 'MO49',
         precio: 4360,
         unidad: 'cápsula',
+        cantidad: 1,
         imagen: './assets/productos/03-gases.jpg',
     },
     {
@@ -160,6 +177,7 @@ const productos = [
         tipo: '141b',
         precio: 6170,
         unidad: 'cápsula',
+        cantidad: 1,
         imagen: './assets/productos/03-gases.jpg',
     },
     {
@@ -169,6 +187,7 @@ const productos = [
         tipo: '3x1.5mm"',
         precio: 270,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/04-cable.jpg',
     },
     {
@@ -178,6 +197,7 @@ const productos = [
         tipo: '3x2.5mm',
         precio: 382,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/04-cable.jpg',
     },
     {
@@ -187,6 +207,7 @@ const productos = [
         tipo: '4x1.5mm',
         precio: 296,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/04-cable.jpg',
     },
     {
@@ -196,6 +217,7 @@ const productos = [
         tipo: '5x1.5mm',
         precio: 412,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/04-cable.jpg',
     },
     {
@@ -205,6 +227,7 @@ const productos = [
         tipo: '5x2.5mm',
         precio: 605,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/04-cable.jpg',
     },
     {
@@ -214,6 +237,7 @@ const productos = [
         tipo: '1/4"',
         precio: 52,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/05-manguera.jpg',
     },
     {
@@ -223,6 +247,7 @@ const productos = [
         tipo: '1/2"',
         precio: 89,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/05-manguera.jpg',
     },
     {
@@ -232,6 +257,7 @@ const productos = [
         tipo: '5/8"',
         precio: 125,
         unidad: 'mt',
+        cantidad: 1,
         imagen: './assets/productos/05-manguera.jpg',
     },
     {
@@ -241,6 +267,7 @@ const productos = [
         tipo: 'Tacsa Blanca S/adh',
         precio: 757,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/06-cinta.jpg',
     },
     {
@@ -250,6 +277,7 @@ const productos = [
         tipo: 'Tacsa Blanca C/adh',
         precio: 1222,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/06-cinta.jpg',
     },
     {
@@ -259,6 +287,7 @@ const productos = [
         tipo: 'Económica Blanca S/adh',
         precio: 638,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/06-cinta.jpg',
     },
     {
@@ -268,6 +297,7 @@ const productos = [
         tipo: 'Económica Blanca C/adh',
         precio: 870,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/06-cinta.jpg',
     },
     {
@@ -277,6 +307,7 @@ const productos = [
         tipo: 'M42 Epoxi',
         precio: 3344,
         unidad: 'juego',
+        cantidad: 1,
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
@@ -286,6 +317,7 @@ const productos = [
         tipo: 'M49 Epoxi',
         precio: 3436,
         unidad: 'juego',
+        cantidad: 1,
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
@@ -295,6 +327,7 @@ const productos = [
         tipo: 'M62 Epoxi',
         precio: 4515,
         unidad: 'juego',
+        cantidad: 1,
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
@@ -304,6 +337,7 @@ const productos = [
         tipo: 'Económica 40cm',
         precio: 1771,
         unidad: 'juego',
+        cantidad: 1,
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
@@ -313,6 +347,7 @@ const productos = [
         tipo: 'Económica 50cm',
         precio: 2092,
         unidad: 'juego',
+        cantidad: 1,
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
@@ -322,6 +357,7 @@ const productos = [
         tipo: 'Económica 60cm',
         precio: 3512,
         unidad: 'juego',
+        cantidad: 1,
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
@@ -331,6 +367,7 @@ const productos = [
         tipo: '1/6HP',
         precio: 22397,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
@@ -340,6 +377,7 @@ const productos = [
         tipo: '1/5HP',
         precio: 23243,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
@@ -349,6 +387,7 @@ const productos = [
         tipo: '1/4HP',
         precio: 27803,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
@@ -358,6 +397,7 @@ const productos = [
         tipo: '1/4+HP',
         precio: 28304,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
@@ -367,6 +407,7 @@ const productos = [
         tipo: '1/3HP',
         precio: 32287,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
@@ -376,6 +417,7 @@ const productos = [
         tipo: '1/3+HP',
         precio: 33285,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
@@ -385,6 +427,7 @@ const productos = [
         tipo: 'Manifold Bronce R22',
         precio: 9783,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
@@ -394,6 +437,7 @@ const productos = [
         tipo: 'Manifold Bronce R410',
         precio: 13726,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
@@ -403,6 +447,7 @@ const productos = [
         tipo: 'Bomba de Vacio VALUE',
         precio: 82334,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
@@ -412,6 +457,7 @@ const productos = [
         tipo: 'Llave crique VALUE',
         precio: 2007,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
@@ -421,6 +467,7 @@ const productos = [
         tipo: 'Pinza selladora VALUE',
         precio: 2672,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
@@ -430,6 +477,7 @@ const productos = [
         tipo:  'Pinza cortacapilar VALUE',
         precio: 3033,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
@@ -439,6 +487,7 @@ const productos = [
         tipo: 'Caja Preinstalación',
         precio: 1130,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
@@ -448,6 +497,7 @@ const productos = [
         tipo: 'Tirafondo+Tarugo N°10',
         precio: 58,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
@@ -457,6 +507,7 @@ const productos = [
         tipo: 'Tornillo+Tarugo N°6',
         precio: 18,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
@@ -466,6 +517,7 @@ const productos = [
         tipo: 'Patas de Goma',
         precio: 416,
         unidad: 'juego',
+        cantidad: 1,
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
@@ -475,6 +527,7 @@ const productos = [
         tipo: 'Pico de Drenaje',
         precio: 199,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
@@ -484,6 +537,7 @@ const productos = [
         tipo: 'Tapa Agujero',
         precio: 153,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
@@ -493,6 +547,7 @@ const productos = [
         tipo: 'Control Remoto Universal',
         precio: 1283,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/11-varios.jpg',
     },
     {
@@ -502,6 +557,7 @@ const productos = [
         tipo: 'Pila AAA',
         precio: 137,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/11-varios.jpg',
     },
     {
@@ -511,6 +567,7 @@ const productos = [
         tipo: 'Pila AA',
         precio: [1283, 137, 122, 18677],
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/11-varios.jpg',
     },
     {
@@ -520,6 +577,7 @@ const productos = [
         tipo: 'Bomba Drenaje 10l/h',
         precio: 18677,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/11-varios.jpg',
     },
     {
@@ -529,6 +587,7 @@ const productos = [
         tipo: 'TRANE 2250fr ON-OFF',
         precio: 98657,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
@@ -538,6 +597,7 @@ const productos = [
         tipo: 'TRANE 3000fr ON-OFF',
         precio: 108728,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
@@ -547,6 +607,7 @@ const productos = [
         tipo: 'TRANE 4500fr ON-OFF',
         precio: 161769,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
@@ -556,6 +617,7 @@ const productos = [
         tipo: 'TRANE 6000fr ON-OFF',
         precio: 193572,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
@@ -565,6 +627,7 @@ const productos = [
         tipo: 'TRANE 2250fr INVERTER',
         precio: 132299,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
@@ -574,6 +637,7 @@ const productos = [
         tipo: 'TRANE 3000fr INVERTER',
         precio: 137708,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
@@ -583,6 +647,7 @@ const productos = [
         tipo: 'TRANE 4500fr INVERTER',
         precio: 198439,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
@@ -592,23 +657,7 @@ const productos = [
         tipo:  'TRANE 6000fr INVERTER',
         precio: 245698,
         unidad: 'unidad',
+        cantidad: 1,
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
 ]
-
-const catalogoDefault = document.getElementById("canvas");
-
-const renderizarCatalogo = ()=>{
-    for (let producto of productos) {
-        catalogoDefault.innerHTML += `
-        <div class="card" style="width: 18rem;" id="canvas">
-            <img src=${producto.imagen} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
-                <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
-                <a id="agregarBtn" href="#" class="btn btn-primary">Agregar</a>
-            </div>
-        </div>
-        `
-    }
-};

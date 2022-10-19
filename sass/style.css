@@ -35,6 +35,11 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+  margin: 0; }
+
 .header__logo {
   width: 100px;
   display: flex;

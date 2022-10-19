@@ -1,6 +1,24 @@
 //Variables de barra de búsqueda y lienzo de productos.
-const search = document.getElementById("search");
 const canvas = document.getElementById("canvas");
+const search = document.getElementById("search");
+
+
+const renderizarCatalogo = ()=>{
+    productos.forEach((producto) => {
+        const card = document.createElement("div");
+        card.innerHTML += `
+        <div class="card" style="width: 18rem;" id="card${producto.idCategoria}${producto.idProducto}">
+            <img src=${producto.imagen} class="card-img-top" alt="${producto.nombre}">
+            <div class="card-body">
+                <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
+                <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
+                <a id="agregarBtn${producto.idCategoria}${producto.idProducto}" class="btn btn-primary">Agregar</a>
+            </div>
+        </div>
+        `
+        canvas.appendChild(card);
+    })
+};
 
 //Cargamos catálogo por defecto.
 renderizarCatalogo();
@@ -13,16 +31,18 @@ const filtrarBusqueda = ()=>{
         let nombre = producto.nombre.toLowerCase();
 
         if (nombre.indexOf(texto) !== -1){
-            canvas.innerHTML += `
-            <div class="card" style="width: 18rem;" id="canvas">
-                <img src=${producto.imagen} class="card-img-top" alt="...">
+            const card = document.createElement("div");
+            card.innerHTML += `
+            <div class="card" style="width: 18rem;" id="card${producto.idCategoria}${producto.idProducto}">
+                <img src=${producto.imagen} class="card-img-top" alt="${producto.nombre}">
                 <div class="card-body">
                     <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
                     <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
-                    <a id="agregarBtn" href="#" class="btn btn-primary">Agregar</a>
+                    <a id="agregarBtn${producto.idCategoria}${producto.idProducto}" class="btn btn-primary">Agregar</a>
                 </div>
             </div>
             `
+            canvas.appendChild(card);
         }
 
     }
@@ -42,7 +62,7 @@ const sidebarCategorias = document.getElementById('sidebarCategorias');
 // console.log(Array.isArray(sidebarCategorias));
 const sidebarArray = [...sidebarCategorias];
 // console.log(Array.isArray(sidebarArray));
-// console.log(sidebarArray);
+// console.log(sidebarArray[1].value);
 // sidebarArray.forEach(categoria => {
 //     console.log(categoria.value);
 // });
@@ -55,26 +75,27 @@ const filtrarCategoria = (categoria)=>{
         sidebarArray.forEach(categoria => {
             let catId = parseInt(categoria.value);
             if (catId === prodId) {
-                canvas.innerHTML += `
-                <div class="card" style="width: 18rem;" id="canvas">
-                    <img src=${producto.imagen} class="card-img-top" alt="...">
+                const card = document.createElement("div");
+                card.innerHTML += `
+                <div class="card" style="width: 18rem;" id="card${producto.idCategoria}${producto.idProducto}">
+                    <img src=${producto.imagen} class="card-img-top" alt="${producto.nombre}">
                     <div class="card-body">
                         <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
                         <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
-                        <a id="agregarBtn" href="#" class="btn btn-primary">Agregar</a>
+                        <a id="agregarBtn${producto.idCategoria}${producto.idProducto}" class="btn btn-primary">Agregar</a>
                     </div>
                 </div>
                 `
+                canvas.appendChild(card);
             };
         });
     };
 };
 /*HAY QUE REVISAR LA FORMULA Y EL LLAMADO*/
 //Filtrar por categoría de sidebar.
-for (let i = 0; i < sidebarArray.length; i++) {
-    sidebarArray[i].addEventListener('click', (event) => {
-        console.log(event.target.value)
-    });
-    filtrarCategoria(i);
-}
+sidebarArray.addEventListener('click', ()=>{
+    let catId = sidebarArray[1].value;
+    console.log(catId);
+    //filtrarCategoria(categoria);
+});
 
