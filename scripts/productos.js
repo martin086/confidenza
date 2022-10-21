@@ -1,8 +1,7 @@
 // Array de Productos
 const productos = [
     {
-        idCategoria: 1,
-        idProducto: 1,
+        idProducto: 11,
         nombre: 'Caño de Cobre',
         tipo: '1/4"',
         precio: 1072,
@@ -11,8 +10,7 @@ const productos = [
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
-        idCategoria: 1,
-        idProducto: 2,
+        idProducto: 12,
         nombre: 'Caño de Cobre',
         tipo: '5/16"',
         precio: 1353,
@@ -21,8 +19,7 @@ const productos = [
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
-        idCategoria: 1,
-        idProducto: 3,
+        idProducto: 13,
         nombre: 'Caño de Cobre',
         tipo: '3/8"',
         precio: 1707,
@@ -31,8 +28,7 @@ const productos = [
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
-        idCategoria: 1,
-        idProducto: 4,
+        idProducto: 14,
         nombre: 'Caño de Cobre',
         tipo: '1/2"',
         precio: 2309,
@@ -41,8 +37,7 @@ const productos = [
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
-        idCategoria: 1,
-        idProducto: 5,
+        idProducto: 15,
         nombre: 'Caño de Cobre',
         tipo: '5/8"',
         precio: 2975,
@@ -51,8 +46,7 @@ const productos = [
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
-        idCategoria: 1,
-        idProducto: 6,
+        idProducto: 16,
         nombre: 'Caño de Cobre',
         tipo: '3/4"',
         precio: 3415,
@@ -61,8 +55,7 @@ const productos = [
         imagen: './assets/productos/01-cobre.jpg',
     },
     {
-        idCategoria: 2,
-        idProducto: 1,
+        idProducto: 21,
         nombre: 'Aislación Elastomérica',
         tipo: '1/4"',
         precio: 495,
@@ -71,8 +64,7 @@ const productos = [
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
-        idCategoria: 2,
-        idProducto: 2,
+        idProducto: 22,
         nombre: 'Aislación Elastomérica',
         tipo: '5/16"',
         precio: 500,
@@ -81,8 +73,7 @@ const productos = [
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
-        idCategoria: 2,
-        idProducto: 3,
+        idProducto: 23,
         nombre: 'Aislación Elastomérica',
         tipo: '3/8"',
         precio: 530,
@@ -91,8 +82,7 @@ const productos = [
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
-        idCategoria: 2,
-        idProducto: 4,
+        idProducto: 24,
         nombre: 'Aislación Elastomérica',
         tipo: '1/2"',
         precio: 600,
@@ -101,8 +91,7 @@ const productos = [
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
-        idCategoria: 2,
-        idProducto: 5,
+        idProducto: 25,
         nombre: 'Aislación Elastomérica',
         tipo: '5/8"',
         precio: 670,
@@ -111,8 +100,7 @@ const productos = [
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
-        idCategoria: 2,
-        idProducto: 6,
+        idProducto: 26,
         nombre: 'Aislación Elastomérica',
         tipo: '3/4"',
         precio: 740,
@@ -121,8 +109,7 @@ const productos = [
         imagen: './assets/productos/02-aislacion.jpg',
     },
     {
-        idCategoria: 3,
-        idProducto: 1,
+        idProducto: 31,
         nombre: 'Gases Refrigerantes',
         tipo: 'R22',
         precio: 7940,
@@ -131,8 +118,7 @@ const productos = [
         imagen: './assets/productos/03-gases.jpg',
     },
     {
-        idCategoria: 3,
-        idProducto: 2,
+        idProducto: 32,
         nombre: 'Gases Refrigerantes',
         tipo: 'R410',
         precio: 3780,
@@ -141,8 +127,7 @@ const productos = [
         imagen: './assets/productos/03-gases.jpg',
     },
     {
-        idCategoria: 3,
-        idProducto: 3,
+        idProducto: 33,
         nombre: 'Gases Refrigerantes',
         tipo: 'R134',
         precio: 3230,
@@ -151,8 +136,7 @@ const productos = [
         imagen: './assets/productos/03-gases.jpg',
     },
     {
-        idCategoria: 3,
-        idProducto: 4,
+        idProducto: 34,
         nombre: 'Gases Refrigerantes',
         tipo: 'R404',
         precio: 4155,
@@ -161,8 +145,7 @@ const productos = [
         imagen: './assets/productos/03-gases.jpg',
     },
     {
-        idCategoria: 3,
-        idProducto: 5,
+        idProducto: 35,
         nombre: 'Gases Refrigerantes',
         tipo: 'MO49',
         precio: 4360,
@@ -171,8 +154,7 @@ const productos = [
         imagen: './assets/productos/03-gases.jpg',
     },
     {
-        idCategoria: 3,
-        idProducto: 6,
+        idProducto: 36,
         nombre: 'Gases Refrigerantes',
         tipo: '141b',
         precio: 6170,
@@ -181,8 +163,7 @@ const productos = [
         imagen: './assets/productos/03-gases.jpg',
     },
     {
-        idCategoria: 4,
-        idProducto: 1,
+        idProducto: 41,
         nombre: 'Cable Taller',
         tipo: '3x1.5mm"',
         precio: 270,
@@ -191,8 +172,7 @@ const productos = [
         imagen: './assets/productos/04-cable.jpg',
     },
     {
-        idCategoria: 4,
-        idProducto: 2,
+        idProducto: 42,
         nombre: 'Cable Taller',
         tipo: '3x2.5mm',
         precio: 382,
@@ -201,8 +181,7 @@ const productos = [
         imagen: './assets/productos/04-cable.jpg',
     },
     {
-        idCategoria: 4,
-        idProducto: 3,
+        idProducto: 43,
         nombre: 'Cable Taller',
         tipo: '4x1.5mm',
         precio: 296,
@@ -211,8 +190,7 @@ const productos = [
         imagen: './assets/productos/04-cable.jpg',
     },
     {
-        idCategoria: 4,
-        idProducto: 4,
+        idProducto: 44,
         nombre: 'Cable Taller',
         tipo: '5x1.5mm',
         precio: 412,
@@ -221,8 +199,7 @@ const productos = [
         imagen: './assets/productos/04-cable.jpg',
     },
     {
-        idCategoria: 4,
-        idProducto: 5,
+        idProducto: 45,
         nombre: 'Cable Taller',
         tipo: '5x2.5mm',
         precio: 605,
@@ -231,8 +208,7 @@ const productos = [
         imagen: './assets/productos/04-cable.jpg',
     },
     {
-        idCategoria: 5,
-        idProducto: 1,
+        idProducto: 51,
         nombre: 'Manguera Cristal',
         tipo: '1/4"',
         precio: 52,
@@ -241,8 +217,7 @@ const productos = [
         imagen: './assets/productos/05-manguera.jpg',
     },
     {
-        idCategoria: 5,
-        idProducto: 2,
+        idProducto: 52,
         nombre: 'Manguera Cristal',
         tipo: '1/2"',
         precio: 89,
@@ -251,8 +226,7 @@ const productos = [
         imagen: './assets/productos/05-manguera.jpg',
     },
     {
-        idCategoria: 5,
-        idProducto: 3,
+        idProducto: 53,
         nombre: 'Manguera Cristal',
         tipo: '5/8"',
         precio: 125,
@@ -261,8 +235,7 @@ const productos = [
         imagen: './assets/productos/05-manguera.jpg',
     },
     {
-        idCategoria: 6,
-        idProducto: 1,
+        idProducto: 61,
         nombre: 'Cinta de PVC',
         tipo: 'Tacsa Blanca S/adh',
         precio: 757,
@@ -271,8 +244,7 @@ const productos = [
         imagen: './assets/productos/06-cinta.jpg',
     },
     {
-        idCategoria: 6,
-        idProducto: 2,
+        idProducto: 62,
         nombre: 'Cinta de PVC',
         tipo: 'Tacsa Blanca C/adh',
         precio: 1222,
@@ -281,8 +253,7 @@ const productos = [
         imagen: './assets/productos/06-cinta.jpg',
     },
     {
-        idCategoria: 6,
-        idProducto: 3,
+        idProducto: 63,
         nombre: 'Cinta de PVC',
         tipo: 'Económica Blanca S/adh',
         precio: 638,
@@ -291,8 +262,7 @@ const productos = [
         imagen: './assets/productos/06-cinta.jpg',
     },
     {
-        idCategoria: 6,
-        idProducto: 4,
+        idProducto: 64,
         nombre: 'Cinta de PVC',
         tipo: 'Económica Blanca C/adh',
         precio: 870,
@@ -301,8 +271,7 @@ const productos = [
         imagen: './assets/productos/06-cinta.jpg',
     },
     {
-        idCategoria: 7,
-        idProducto: 1,
+        idProducto: 71,
         nombre: 'Ménsulas Reforzadas',
         tipo: 'M42 Epoxi',
         precio: 3344,
@@ -311,8 +280,7 @@ const productos = [
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
-        idCategoria: 7,
-        idProducto: 2,
+        idProducto: 72,
         nombre: 'Ménsulas Reforzadas',
         tipo: 'M49 Epoxi',
         precio: 3436,
@@ -321,8 +289,7 @@ const productos = [
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
-        idCategoria: 7,
-        idProducto: 3,
+        idProducto: 73,
         nombre: 'Ménsulas Reforzadas',
         tipo: 'M62 Epoxi',
         precio: 4515,
@@ -331,8 +298,7 @@ const productos = [
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
-        idCategoria: 7,
-        idProducto: 4,
+        idProducto: 74,
         nombre: 'Ménsulas Reforzadas',
         tipo: 'Económica 40cm',
         precio: 1771,
@@ -341,8 +307,7 @@ const productos = [
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
-        idCategoria: 7,
-        idProducto: 5,
+        idProducto: 75,
         nombre: 'Ménsulas Reforzadas',
         tipo: 'Económica 50cm',
         precio: 2092,
@@ -351,8 +316,7 @@ const productos = [
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
-        idCategoria: 7,
-        idProducto: 6,
+        idProducto: 76,
         nombre: 'Ménsulas Reforzadas',
         tipo: 'Económica 60cm',
         precio: 3512,
@@ -361,8 +325,7 @@ const productos = [
         imagen: './assets/productos/07-mensulas.jpg',
     },
     {
-        idCategoria: 8,
-        idProducto: 1,
+        idProducto: 81,
         nombre: 'Motocompresores',
         tipo: '1/6HP',
         precio: 22397,
@@ -371,8 +334,7 @@ const productos = [
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
-        idCategoria: 8,
-        idProducto: 2,
+        idProducto: 82,
         nombre: 'Motocompresores',
         tipo: '1/5HP',
         precio: 23243,
@@ -381,8 +343,7 @@ const productos = [
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
-        idCategoria: 8,
-        idProducto: 3,
+        idProducto: 83,
         nombre: 'Motocompresores',
         tipo: '1/4HP',
         precio: 27803,
@@ -391,8 +352,7 @@ const productos = [
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
-        idCategoria: 8,
-        idProducto: 4,
+        idProducto: 84,
         nombre: 'Motocompresores',
         tipo: '1/4+HP',
         precio: 28304,
@@ -401,8 +361,7 @@ const productos = [
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
-        idCategoria: 8,
-        idProducto: 5,
+        idProducto: 85,
         nombre: 'Motocompresores',
         tipo: '1/3HP',
         precio: 32287,
@@ -411,8 +370,7 @@ const productos = [
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
-        idCategoria: 8,
-        idProducto: 6,
+        idProducto: 86,
         nombre: 'Motocompresores',
         tipo: '1/3+HP',
         precio: 33285,
@@ -421,8 +379,7 @@ const productos = [
         imagen: './assets/productos/08-compresores.jpg',
     },
     {
-        idCategoria: 9,
-        idProducto: 1,
+        idProducto: 91,
         nombre: 'Herramientas',
         tipo: 'Manifold Bronce R22',
         precio: 9783,
@@ -431,8 +388,7 @@ const productos = [
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
-        idCategoria: 9,
-        idProducto: 2,
+        idProducto: 92,
         nombre: 'Herramientas',
         tipo: 'Manifold Bronce R410',
         precio: 13726,
@@ -441,8 +397,7 @@ const productos = [
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
-        idCategoria: 9,
-        idProducto: 3,
+        idProducto: 93,
         nombre: 'Herramientas',
         tipo: 'Bomba de Vacio VALUE',
         precio: 82334,
@@ -451,8 +406,7 @@ const productos = [
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
-        idCategoria: 9,
-        idProducto: 4,
+        idProducto: 94,
         nombre: 'Herramientas',
         tipo: 'Llave crique VALUE',
         precio: 2007,
@@ -461,8 +415,7 @@ const productos = [
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
-        idCategoria: 9,
-        idProducto: 5,
+        idProducto: 95,
         nombre: 'Herramientas',
         tipo: 'Pinza selladora VALUE',
         precio: 2672,
@@ -471,8 +424,7 @@ const productos = [
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
-        idCategoria: 9,
-        idProducto: 6,
+        idProducto: 96,
         nombre: 'Herramientas',
         tipo:  'Pinza cortacapilar VALUE',
         precio: 3033,
@@ -481,8 +433,7 @@ const productos = [
         imagen: './assets/productos/09-herramientas.jpg',
     },
     {
-        idCategoria: 10,
-        idProducto: 1,
+        idProducto: 101,
         nombre: 'Accesorios',
         tipo: 'Caja Preinstalación',
         precio: 1130,
@@ -491,8 +442,7 @@ const productos = [
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
-        idCategoria: 10,
-        idProducto: 2,
+        idProducto: 102,
         nombre: 'Accesorios',
         tipo: 'Tirafondo+Tarugo N°10',
         precio: 58,
@@ -501,8 +451,7 @@ const productos = [
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
-        idCategoria: 10,
-        idProducto: 3,
+        idProducto: 103,
         nombre: 'Accesorios',
         tipo: 'Tornillo+Tarugo N°6',
         precio: 18,
@@ -511,8 +460,7 @@ const productos = [
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
-        idCategoria: 10,
-        idProducto: 4,
+        idProducto: 104,
         nombre: 'Accesorios',
         tipo: 'Patas de Goma',
         precio: 416,
@@ -521,8 +469,7 @@ const productos = [
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
-        idCategoria: 10,
-        idProducto: 5,
+        idProducto: 105,
         nombre: 'Accesorios',
         tipo: 'Pico de Drenaje',
         precio: 199,
@@ -531,8 +478,7 @@ const productos = [
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
-        idCategoria: 10,
-        idProducto: 6,
+        idProducto: 106,
         nombre: 'Accesorios',
         tipo: 'Tapa Agujero',
         precio: 153,
@@ -541,8 +487,7 @@ const productos = [
         imagen: './assets/productos/10-accesorios.jpg',
     },
     {
-        idCategoria: 11,
-        idProducto: 1,
+        idProducto: 111,
         nombre: 'Varios',
         tipo: 'Control Remoto Universal',
         precio: 1283,
@@ -551,8 +496,7 @@ const productos = [
         imagen: './assets/productos/11-varios.jpg',
     },
     {
-        idCategoria: 11,
-        idProducto: 2,
+        idProducto: 112,
         nombre: 'Varios',
         tipo: 'Pila AAA',
         precio: 137,
@@ -561,8 +505,7 @@ const productos = [
         imagen: './assets/productos/11-varios.jpg',
     },
     {
-        idCategoria: 11,
-        idProducto: 3,
+        idProducto: 113,
         nombre: 'Varios',
         tipo: 'Pila AA',
         precio: [1283, 137, 122, 18677],
@@ -571,8 +514,7 @@ const productos = [
         imagen: './assets/productos/11-varios.jpg',
     },
     {
-        idCategoria: 11,
-        idProducto: 4,
+        idProducto: 114,
         nombre: 'Varios',
         tipo: 'Bomba Drenaje 10l/h',
         precio: 18677,
@@ -581,8 +523,7 @@ const productos = [
         imagen: './assets/productos/11-varios.jpg',
     },
     {
-        idCategoria: 12,
-        idProducto: 1,
+        idProducto: 121,
         nombre: 'Aire Acondicionado',
         tipo: 'TRANE 2250fr ON-OFF',
         precio: 98657,
@@ -591,8 +532,7 @@ const productos = [
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
-        idCategoria: 12,
-        idProducto: 2,
+        idProducto: 122,
         nombre: 'Aire Acondicionado',
         tipo: 'TRANE 3000fr ON-OFF',
         precio: 108728,
@@ -601,8 +541,7 @@ const productos = [
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
-        idCategoria: 12,
-        idProducto: 3,
+        idProducto: 123,
         nombre: 'Aire Acondicionado',
         tipo: 'TRANE 4500fr ON-OFF',
         precio: 161769,
@@ -611,8 +550,7 @@ const productos = [
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
-        idCategoria: 12,
-        idProducto: 4,
+        idProducto: 124,
         nombre: 'Aire Acondicionado',
         tipo: 'TRANE 6000fr ON-OFF',
         precio: 193572,
@@ -621,8 +559,7 @@ const productos = [
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
-        idCategoria: 12,
-        idProducto: 5,
+        idProducto: 125,
         nombre: 'Aire Acondicionado',
         tipo: 'TRANE 2250fr INVERTER',
         precio: 132299,
@@ -631,8 +568,7 @@ const productos = [
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
-        idCategoria: 12,
-        idProducto: 6,
+        idProducto: 126,
         nombre: 'Aire Acondicionado',
         tipo: 'TRANE 3000fr INVERTER',
         precio: 137708,
@@ -641,8 +577,7 @@ const productos = [
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
-        idCategoria: 12,
-        idProducto: 7,
+        idProducto: 127,
         nombre: 'Aire Acondicionado',
         tipo: 'TRANE 4500fr INVERTER',
         precio: 198439,
@@ -651,8 +586,7 @@ const productos = [
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
     {
-        idCategoria: 12,
-        idProducto: 8,
+        idProducto: 128,
         nombre: 'Aire Acondicionado',
         tipo:  'TRANE 6000fr INVERTER',
         precio: 245698,
@@ -661,3 +595,15 @@ const productos = [
         imagen: './assets/productos/12-aireacondicionado.jpg',
     },
 ]
+
+class Producto {
+    constructor(idProducto, nombre, tipo, precio, unidad, cantidad, imagen) {
+        this.idProducto = idProducto;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.precio = precio;
+        this.unidad = unidad;
+        this.cantidad = cantidad;
+        this.imagen = imagen;
+    }
+}
