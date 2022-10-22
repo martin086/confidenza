@@ -91,7 +91,7 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser2">
-                            <li><a id="verCarritoDrop" class="dropdown-item" href="./carrito.html">Ir al Carrito</a></li>
+                            <li><a id="verCarritoDrop" class="dropdown-item" href="#carrito">Ir al Carrito</a></li>
                             <li><a class="dropdown-item" href="#">Configuración</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>Usuario</a></li>
                             <li>
@@ -117,13 +117,13 @@
                             <option value="7">Ménsulas Reforzadas</option>
                             <option value="8">Motocompresores</option>
                             <option value="9">Herramientas</option>
-                            <option value="10">Acces. p/ Instalaciones</option>
+                            <option value="10">Accesorios</option>
                             <option value="11">Varios</option>
                             <option value="12">Aire Acondicionado</option>
                         </select>
                     </div>
                     <hr />
-                    <h4><a class="verCarritoSide" href="./carrito.html">Ir al Carrito</a></h4>
+                    <h4><a class="verCarritoSide" href="#carrito">Ir al Carrito</a></h4>
                     <hr />
                     
                 </aside>
@@ -134,11 +134,87 @@
                 </main>
             </div>
         </div>
+        <div id="carrito" class="carrito">
+            <section class="h-100 h-custom" style="background-color: whitesmoke;">
+                <div class="container py-5 h-100">
+                  <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12">
+                      <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                        <div class="card-body p-0">
+                          <div class="row g-0">
+                            <div class="col-lg-8">
+                              <div class="p-5">
+                                <div class="d-flex justify-content-between align-items-center mb-5">
+                                  <h1 class="fw-bold mb-0 text-black">Carrito</h1>
+                                  <h6 class="mb-0 text-muted">3 items</h6>
+                                </div>
+                                <hr class="my-4">
+                                <!--Elementos del carrito-->
+                                <div id="carritoItems">
+                                </div>
+                                <!--Fin elementos de carrito-->
+                                <div class="container text-center">
+                                  <div class="row align-items-center justify-content-between">
+                                    <div class="col-4">
+                                      <div class="pt-0">
+                                        <h6 class="mb-0"><a href="#search" class="text-body"><i
+                                              class="fas fa-long-arrow-alt-left me-2"></i>Seguir Comprando</a></h6>
+                                      </div>
+                                    </div>
+                                    <div class="col-4">
+                                      <button id="vaciarCarrito" type="button" class="btn btn-danger btn-block btn-lg">Vaciar</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!--Sección resúmen total-->
+                            <div class="col-lg-4 bg-grey">
+                              <div class="p-5">
+                                <h3 class="fw-bold mb-5 mt-2 pt-1">Resúmen</h3>
+                                <hr class="my-4">
+              
+                                <div class="d-flex justify-content-between mb-4">
+                                  <h5 id="etiquetaitems" class="text-uppercase">Subtotal</h5>
+                                  <h5 id="subTotalItems">$ 0.00</h5>
+                                </div>
+              
+                                <div class="d-flex justify-content-between mb-4 pb-2">
+                                  <h5 class="text-uppercase">Envío</h5>
+                                  <select id="envioSelect" class="select">
+                                    <option value="5">Envío Estándar - $5</option>
+                                    <option value="10">Envío Inmediato - $10</option>
+                                  </select>
+                                </div>
+              
+                                <div class="d-flex justify-content-between mb-4">
+                                  <h5 class="text-uppercase mb-3">IVA (21%)</h5>
+                                  <h5 id="iva">$ 0.00</h5>
+                                </div>
+              
+                                <hr class="my-4">
+              
+                                <div class="d-flex justify-content-between mb-5">
+                                  <h5 class="text-uppercase">Total</h5>
+                                  <h5 id="total">$ 0.00</h5>
+                                </div>
+              
+                                <button id="checkoutBtn" type="button" class="btn btn-dark btn-block btn-lg">Checkout</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        </div>
     
     
     <script src="./scripts/navbar-collapse.js"></script>
-    <script src="./scripts/productos.js"></script>
-    <script src="./scripts/carrito.js"></script>
+    <script src="./scripts/productos.js" type="module"></script>
+    <script src="./scripts/carrito.js" type="module"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

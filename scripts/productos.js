@@ -1,5 +1,5 @@
 // Array de Productos
-const productos = [
+export const productos = [
     {
         idProducto: 11,
         nombre: 'Caño de Cobre',
@@ -508,7 +508,7 @@ const productos = [
         idProducto: 113,
         nombre: 'Varios',
         tipo: 'Pila AA',
-        precio: [1283, 137, 122, 18677],
+        precio: 122,
         unidad: 'unidad',
         cantidad: 1,
         imagen: './assets/productos/11-varios.jpg',

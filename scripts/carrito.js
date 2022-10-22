@@ -1,9 +1,18 @@
 //***Sección Productos y Búsqueda****
-//Variables de barra de búsqueda y lienzo de productos.
+import {productos} from './productos.js';
+//Variables de barra de búsqueda y lienzo de productos:
 const canvas = document.getElementById("canvas");
 const search = document.getElementById("search");
+//Variables de Carrito:
+let carrito = [];
+const moneda = "$";
+const subTotalItems = document.getElementById('subTotalItems');
+const total = document.getElementById('total');
+const iva = document.getElementById('iva');
+const envioSelect = document.getElementById('envioSelect');
 
 
+//Función para renderizar el catálogo de productos.
 const renderizarCatalogo = ()=>{
     productos.forEach((producto) => {
         const card = document.createElement("div");
@@ -13,10 +22,10 @@ const renderizarCatalogo = ()=>{
             <div class="card-body">
                 <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
                 <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
-                <a id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</a>
+                <button id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</button>
             </div>
         </div>
-        `
+        `;
         canvas.appendChild(card);
 
         //Agregar productos al carrito:
@@ -27,6 +36,32 @@ const renderizarCatalogo = ()=>{
         });
     });
 };
+
+const agregarAlCarrito = (id) => {
+    const producto = productos.find((producto) => producto.idProducto === id);
+    const productoListadoEnCarrito = carrito.find((producto) => producto.idProducto === id);
+    if(productoListadoEnCarrito){
+        productoListadoEnCarrito.cantidad++;
+    }else {
+        carrito.push(producto);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+    calculoTotal();
+}
+
+//Mostramos resúmen con el total de la compra y sus componentes.
+const calculoTotal = () => {
+    let totalCompra = 0; 
+    carrito.forEach((producto) => {
+        totalCompra += producto.precio * producto.cantidad;
+    })
+    const envio = parseInt(envioSelect.value);
+    const totalIva = (totalCompra + envio) * 0.21;
+    subTotalItems.innerHTML = `${moneda}${totalCompra}`;
+    iva.innerHTML = `${moneda}${totalIva}`;
+    total.innerHTML = `${moneda}${(totalCompra+envio+totalIva)}`;
+}
+
 
 //Cargamos catálogo por defecto.
 renderizarCatalogo();
@@ -46,10 +81,10 @@ const filtrarBusqueda = ()=>{
                 <div class="card-body">
                     <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
                     <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
-                    <a id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</a>
+                    <button id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</button>
                 </div>
             </div>
-            `
+            `;
             canvas.appendChild(card);
 
             //Agregar productos al carrito:
@@ -71,7 +106,6 @@ search.addEventListener('keyup', ()=>{
 });
 
 //Variables de sidebar.
-//const sidebarCategorias = document.querySelectorAll('.sidebar_cat');
 const sidebarCategorias = document.getElementById('sidebarCategorias');
 // console.log(Array.isArray(sidebarCategorias));
 const sidebarArray = [...sidebarCategorias];
@@ -84,45 +118,43 @@ const sidebarArray = [...sidebarCategorias];
 //Función para filtrar por categoría de sidebar.
 const filtrarCategoria = (categoria)=>{
     canvas.innerHTML = '';
+    const productoCat = productos.find((producto) => producto.nombre === categoria);
+    const sidebarCat = sidebarArray.options[sidebarArray.selectedIndex].text;
     for (let producto of productos) {
-        let prodCat = producto.nombre;
-        sidebarArray.forEach(categoria => {
-            let catId = categoria.nombre;
-            if (catId === prodCat) {
-                const card = document.createElement("div");
-                card.innerHTML += `
-                <div class="card" style="width: 18rem;" id="card${producto.idProducto}">
-                    <img src=${producto.imagen} class="card-img-top" alt="${producto.nombre}">
-                    <div class="card-body">
-                        <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
-                        <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
-                        <a id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</a>
-                    </div>
+        if (productoCat === sidebarCat) {
+            const card = document.createElement("div");
+            card.innerHTML += `
+            <div class="card" style="width: 18rem;" id="card${producto.idProducto}">
+                <img src=${producto.imagen} class="card-img-top" alt="${producto.nombre}">
+                <div class="card-body">
+                    <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
+                    <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
+                    <button id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</button>
                 </div>
-                `
-                canvas.appendChild(card);
+            </div>
+            `;
+            canvas.appendChild(card);
 
-                //Agregar productos al carrito: 
-                const botonAdd = document.getElementById(`agregarBtn${producto.idProducto}`);
-                botonAdd.addEventListener("click", () => {
-                    console.log(botonAdd);
-                    agregarAlCarrito(producto.idProducto);
-                });
-            };
-        });
+            //Agregar productos al carrito: 
+            const botonAdd = document.getElementById(`agregarBtn${producto.idProducto}`);
+            botonAdd.addEventListener("click", () => {
+                console.log(botonAdd);
+                agregarAlCarrito(producto.idProducto);
+            });
+        };
     };
 };
 /*HAY QUE REVISAR LA FORMULA Y EL LLAMADO*/
 //Filtrar por categoría de sidebar.
-// sidebarArray.addEventListener('click', ()=>{
-//     let catId = sidebarArray[1].value;
-//     console.log(catId);
-//     filtrarCategoria(categoria);
-// });
+sidebarArray.addEventListener('click', ()=>{
+    let categoria = sidebarArray.options[sidebarArray.selectedIndex].text;
+    console.log(categoria);
+    filtrarCategoria(categoria);
+});
 
-//****Sección Carrito****
-let carrito = [];
-const moneda = "$";
+
+
+
 
 
 //Si hay algo en el localStorage, lo cargamos en el carrito. 
@@ -148,9 +180,8 @@ verCarritoDrop.addEventListener('click', () => {
 const mostrarCarrito = () => {
     carritoItems.innerHTML = "";
     carrito.forEach((producto)=>{
-        const cartElement = document.createElement("div");
-
-        cartElement.innerHTML = `
+        const card = document.createElement("div");
+        card.innerHTML = `
         <div class="row mb-4 d-flex justify-content-between align-items-center">
             <div class="col-md-2 col-lg-2 col-xl-2">
                 <img
@@ -179,29 +210,35 @@ const mostrarCarrito = () => {
                 <h6 class="mb-0">${moneda}${producto.precio}</h6>
             </div>
             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                <button id="del${producto.idProducto}" href="#!" class="text-muted"><i class="fas fa-times"></i></button>
             </div>  
         </div>
         <hr class="my-4">
         `
-        carritoItems.appendChild(cartElement);
+        carritoItems.appendChild(card);
         
+        //Eliminar productos del carrito:
+        const botonDel = document.getElementById(`del${producto.idProducto}`);
+        botonDel.addEventListener('click', ()=>{
+            eliminarDelCarrito(producto.idProducto);
+        })
     })
+    calculoTotal();
 }
 
 
 //Añadir un producto al carrito:
-const agregarAlCarrito = (id) => {
-    const producto = productos.find((producto) => producto.idProducto === id);
-    const productoListadoEnCarrito = carrito.find((producto) => producto.idProducto === id);
-    if(productoListadoEnCarrito){
-        productoListadoEnCarrito.cantidad++;
-    }else {
-        carrito.push(producto);
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-    }
-    //calculoTotal();
-}
+// const agregarAlCarrito = (id) => {
+//     const producto = productos.find((producto) => producto.idProducto === id);
+//     const productoListadoEnCarrito = carrito.find((producto) => producto.idProducto === id);
+//     if(productoListadoEnCarrito){
+//         productoListadoEnCarrito.cantidad++;
+//     }else {
+//         carrito.push(producto);
+//         localStorage.setItem("carrito", JSON.stringify(carrito));
+//     }
+//     calculoTotal();
+// }
 
 //Eliminar un producto del carrito:
 const eliminarDelCarrito = (id) => {
@@ -217,10 +254,6 @@ const eliminarDelCarrito = (id) => {
 //Vaciamos todo el carrito de compras: 
 const vaciarCarrito = document.getElementById('vaciarCarrito');
 
-vaciarCarrito.addEventListener('click', () => {
-    vaciarElCarrito();
-})
-
 //Función para eliminar todo el carrito: 
 const vaciarElCarrito = () => {
     carrito = [];
@@ -229,20 +262,8 @@ const vaciarElCarrito = () => {
     localStorage.clear();
 }
 
-//Mostramos mensaje con el total de la compra 
-const subTotalItems = document.getElementById('subTotalItems');
-const total = document.getElementById('total');
-const iva = document.getElementById('iva');
-const envioSelect = document.getElementById('envioSelect');
+vaciarCarrito.addEventListener('click', () => {
+    vaciarElCarrito();
+})
 
-const calculoTotal = () => {
-    let totalCompra = 0; 
-    carrito.forEach((producto) => {
-        totalCompra += producto.precio * producto.cantidad;
-    })
-    let envio = parseInt(envioSelect.value);
-    let totalIva = (totalCompra + envio) * 0.21;
-    subTotalItems.innerHTML = `${moneda}${totalCompra}`;
-    iva.innerHTML = `${moneda}${totalIva}`;
-    total.innerHTML = `${moneda}(${totalCompra}+${envio}+${totalIva})`;
-}
+
