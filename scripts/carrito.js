@@ -1,4 +1,4 @@
-//***Sección Productos y Búsqueda****
+//Importamos productos del script correspondiente.
 import {productos} from './productos.js';
 //Variables de barra de búsqueda y lienzo de productos:
 const canvas = document.getElementById("canvas");
@@ -6,14 +6,15 @@ const search = document.getElementById("search");
 //Variables de Carrito:
 let carrito = [];
 const moneda = "$";
+const carritoItems = document.getElementById('carritoItems');
 const subTotalItems = document.getElementById('subTotalItems');
 const total = document.getElementById('total');
 const iva = document.getElementById('iva');
-const envioSelect = document.getElementById('envioSelect');
+
 
 
 //Función para renderizar el catálogo de productos.
-const renderizarCatalogo = ()=>{
+function renderizarCatalogo() {
     productos.forEach((producto) => {
         const card = document.createElement("div");
         card.innerHTML += `
@@ -30,13 +31,14 @@ const renderizarCatalogo = ()=>{
 
         //Agregar productos al carrito:
         const botonAdd = document.getElementById(`agregarBtn${producto.idProducto}`);
-        botonAdd.addEventListener('click', ()=>{
+        botonAdd.addEventListener('click', () => {
             console.log(botonAdd);
             agregarAlCarrito(producto.idProducto);
         });
     });
-};
+}
 
+//Función para añadir productos al carrito.
 const agregarAlCarrito = (id) => {
     const producto = productos.find((producto) => producto.idProducto === id);
     const productoListadoEnCarrito = carrito.find((producto) => producto.idProducto === id);
@@ -47,21 +49,103 @@ const agregarAlCarrito = (id) => {
         localStorage.setItem("carrito", JSON.stringify(carrito));
     }
     calculoTotal();
+    mostrarCarrito();
 }
 
-//Mostramos resúmen con el total de la compra y sus componentes.
+//Función para calcular resúmen con el total de la compra.
 const calculoTotal = () => {
     let totalCompra = 0; 
     carrito.forEach((producto) => {
         totalCompra += producto.precio * producto.cantidad;
     })
+    const envioSelect = document.getElementById('envioSelect');
     const envio = parseInt(envioSelect.value);
-    const totalIva = (totalCompra + envio) * 0.21;
+    const totalIva = parseFloat(((totalCompra + envio) * 0.21).toFixed(2));
     subTotalItems.innerHTML = `${moneda}${totalCompra}`;
     iva.innerHTML = `${moneda}${totalIva}`;
     total.innerHTML = `${moneda}${(totalCompra+envio+totalIva)}`;
 }
 
+//Función para mostrar el carrito.
+const mostrarCarrito = () => {
+    carritoItems.innerHTML = "";
+    carrito.forEach((producto)=>{
+        const elementoCart = document.createElement("div");
+        elementoCart.innerHTML = `
+        <div class="row mb-4 d-flex justify-content-between align-items-center">
+            <div class="col-md-2 col-lg-2 col-xl-2">
+                <img
+                    src="${producto.imagen}"
+                    class="img-fluid rounded-3" alt="${producto.nombre}">
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <h6 class="text-muted">${producto.nombre} x ${producto.unidad}.</h6>
+                <h6 class="text-black mb-0">${producto.tipo}</h6>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                <button class="btn btn-link px-2"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                    <i class="fas fa-minus"></i>
+                </button>
+            
+                <input id="form1" min="1" name="quantity" value="1" type="number"
+                    class="form-control form-control-sm"/>
+            
+                <button class="btn btn-link px-2"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                <h6 class="mb-0">${moneda}${producto.precio}</h6>
+            </div>
+            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                <button id="del${producto.idProducto}" href="#!" class="text-muted"><i class="fas fa-times"></i></button>
+            </div>  
+        </div>
+        <hr class="my-4">
+        `
+        carritoItems.appendChild(elementoCart);
+        
+        //Eliminar productos del carrito:
+        const botonDel = document.getElementById(`del${producto.idProducto}`);
+        botonDel.addEventListener('click', ()=>{
+            eliminarDelCarrito(producto.idProducto);
+        })
+    })
+    calculoTotal();
+}
+
+//Función para eliminar un producto del carrito:
+function eliminarDelCarrito(id) {
+    const producto = carrito.find((producto) => producto.idProducto === id);
+    const indice = carrito.indexOf(producto);
+    carrito.splice(indice, 1);
+    mostrarCarrito();
+
+    //LocalStorage:
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+//Vaciamos todo el carrito de compras: 
+const vaciarCarrito = document.getElementById('vaciarCarrito');
+
+//Función para eliminar todo el carrito: 
+const vaciarElCarrito = () => {
+    carrito = [];
+    mostrarCarrito();
+    calculoTotal();
+    localStorage.clear();
+}
+
+vaciarCarrito.addEventListener('click', () => {
+    vaciarElCarrito();
+})
+
+//Si hay algo en el localStorage, lo cargamos en el carrito. 
+if(localStorage.getItem("carrito")) {
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+};
 
 //Cargamos catálogo por defecto.
 renderizarCatalogo();
@@ -153,117 +237,5 @@ sidebarArray.addEventListener('click', ()=>{
 });
 
 
-
-
-
-
-//Si hay algo en el localStorage, lo cargamos en el carrito. 
-if(localStorage.getItem("carrito")) {
-    carrito = JSON.parse(localStorage.getItem("carrito"));
-};
-
-
-//Funciones
-//Renderizar Carrito de Compras:
-const carritoItems = document.getElementById('carritoItems');
-const verCarritoDrop = document.getElementById('verCarritoDrop');
-const verCarritoSide = document.getElementById('verCarritoSide');
-
-verCarritoDrop.addEventListener('click', () => {
-    mostrarCarrito();
-});
-
-// verCarritoSide.addEventListener('click', () => {
-//     mostrarCarrito();
-// });
-
-const mostrarCarrito = () => {
-    carritoItems.innerHTML = "";
-    carrito.forEach((producto)=>{
-        const card = document.createElement("div");
-        card.innerHTML = `
-        <div class="row mb-4 d-flex justify-content-between align-items-center">
-            <div class="col-md-2 col-lg-2 col-xl-2">
-                <img
-                    src="${producto.imagen}"
-                    class="img-fluid rounded-3" alt="${producto.nombre}">
-            </div>
-            <div class="col-md-3 col-lg-3 col-xl-3">
-                <h6 class="text-muted">${producto.nombre} x ${producto.unidad}.</h6>
-                <h6 class="text-black mb-0">${producto.tipo}</h6>
-            </div>
-            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                <button class="btn btn-link px-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                    <i class="fas fa-minus"></i>
-                </button>
-            
-                <input id="form1" min="1" name="quantity" value="1" type="number"
-                    class="form-control form-control-sm"/>
-            
-                <button class="btn btn-link px-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i class="fas fa-plus"></i>
-                </button>
-            </div>
-            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h6 class="mb-0">${moneda}${producto.precio}</h6>
-            </div>
-            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                <button id="del${producto.idProducto}" href="#!" class="text-muted"><i class="fas fa-times"></i></button>
-            </div>  
-        </div>
-        <hr class="my-4">
-        `
-        carritoItems.appendChild(card);
-        
-        //Eliminar productos del carrito:
-        const botonDel = document.getElementById(`del${producto.idProducto}`);
-        botonDel.addEventListener('click', ()=>{
-            eliminarDelCarrito(producto.idProducto);
-        })
-    })
-    calculoTotal();
-}
-
-
-//Añadir un producto al carrito:
-// const agregarAlCarrito = (id) => {
-//     const producto = productos.find((producto) => producto.idProducto === id);
-//     const productoListadoEnCarrito = carrito.find((producto) => producto.idProducto === id);
-//     if(productoListadoEnCarrito){
-//         productoListadoEnCarrito.cantidad++;
-//     }else {
-//         carrito.push(producto);
-//         localStorage.setItem("carrito", JSON.stringify(carrito));
-//     }
-//     calculoTotal();
-// }
-
-//Eliminar un producto del carrito:
-const eliminarDelCarrito = (id) => {
-    const producto = carrito.find((producto) => producto.idProducto === id);
-    const indice = carrito.indexOf(producto);
-    carrito.splice(indice, 1);
-    mostrarCarrito();
-
-    //LocalStorage:
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-}
-
-//Vaciamos todo el carrito de compras: 
-const vaciarCarrito = document.getElementById('vaciarCarrito');
-
-//Función para eliminar todo el carrito: 
-const vaciarElCarrito = () => {
-    carrito = [];
-    mostrarCarrito();
-    calculoTotal();
-    localStorage.clear();
-}
-
-vaciarCarrito.addEventListener('click', () => {
-    vaciarElCarrito();
-})
 
 
