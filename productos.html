@@ -146,7 +146,7 @@
                               <div class="p-5">
                                 <div class="d-flex justify-content-between align-items-center mb-5">
                                   <h1 class="fw-bold mb-0 text-black">Carrito</h1>
-                                  <h6 class="mb-0 text-muted">x item(s)</h6>
+                                  <h6 id="xItems" class="mb-0 text-muted">0 item(s)</h6>
                                 </div>
                                 <hr class="my-4">
                                 <!--Elementos del carrito-->
@@ -180,8 +180,8 @@
                                 </div>
               
                                 <div class="d-flex justify-content-between mb-4 pb-2">
-                                  <h5 class="text-uppercase">Envío</h5>
-                                  <select id="envioSelect" class="select" onchange="calculoTotal()">
+                                  <h5 class="text-uppercase mb-0 align-self-center">Envío</h5>
+                                  <select id="envioSelect" class="select form-select ms-3" aria-label="Default select">
                                     <option value="0">Envío Gratis - 48hs</option>
                                     <option value="500">Envío Inmediato - $500</option>
                                   </select>
