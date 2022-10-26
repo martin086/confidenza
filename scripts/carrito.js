@@ -37,15 +37,35 @@ function renderizarCatalogo() {
     });
 }
 
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-right',
+    iconColor: 'white',
+    customClass: {
+        popup: 'colored-toast'
+    },
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true
+})
+
 //Función para añadir productos al carrito.
 const agregarAlCarrito = (id) => {
     const producto = productos.find((producto) => producto.idProducto === id);
     const productoListadoEnCarrito = carrito.find((producto) => producto.idProducto === id);
     if(productoListadoEnCarrito){
         productoListadoEnCarrito.cantidad++;
+        Toast.fire({
+            icon: 'info',
+            title: 'Este producto ya existe en el carrito.',
+        });
     }else {
         carrito.push(producto);
         localStorage.setItem("carrito", JSON.stringify(carrito));
+        Toast.fire({
+            icon: 'success',
+            title: 'Producto añadido.',
+        });
     }
     calculoTotal();
     mostrarCarrito();
@@ -144,14 +164,18 @@ const mostrarCarrito = () => {
         const delBtn = document.getElementById(`del${producto.idProducto}`);
         delBtn.addEventListener('click', ()=>{
             eliminarDelCarrito(producto.idProducto);
-        })
-    })
+            Toast.fire({
+                icon: 'error',
+                title: 'Producto eliminado.',
+            });
+        });
+    });
     calculoTotal();
 }
 
 
 //Función para eliminar un producto del carrito:
-function eliminarDelCarrito(id) {
+const eliminarDelCarrito = (id) => {
     const producto = carrito.find((producto) => producto.idProducto === id);
     const indice = carrito.indexOf(producto);
     producto.cantidad = 1;
@@ -185,6 +209,41 @@ if(localStorage.getItem("carrito")) {
 renderizarCatalogo();
 //Mostramos carrito actual.
 mostrarCarrito();
+
+//Confirmación de compra.
+const checkoutBtn = document.getElementById('checkoutBtn');
+checkoutBtn.addEventListener('click', ()=>{
+    if (carrito.length >= 1){
+        Swal.fire({
+            title: 'Estas a punto de confirmar tu pedido',
+            text: "Deseas continuar?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#4ba722',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Seguir comprando',
+        }).then((result) => {
+            if(result.isConfirmed) {
+                console.log(carrito);
+                Swal.fire ({
+                    title: "Gracias por tu compra",
+                    text: "Procesaremos tu pedido a la brevedad.",
+                    icon: "success",
+                    confirmButtonText: "Aceptar",
+                    confirmButtonColor: "#4ba722",
+                });
+            }
+        })
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'El carrito está vacío',
+            text: 'Por favor agrega algún producto.',
+        })
+    }
+});
+
 
 //***Funciones de filtrado de catálogo***
 //Función para filtrar por busqueda en search.
@@ -226,23 +285,15 @@ search.addEventListener('keyup', ()=>{
     filtrarBusqueda();
 });
 
-//Variables de sidebar.
-const sidebarCategorias = document.getElementById('sidebarCategorias');
-// console.log(Array.isArray(sidebarCategorias));
-const sidebarArray = [...sidebarCategorias];
-// console.log(Array.isArray(sidebarArray));
-// console.log(sidebarArray[1].value);
-// sidebarArray.forEach(categoria => {
-//     console.log(categoria.value);
-// });
 
 //Función para filtrar por categoría de sidebar.
-const filtrarCategoria = (categoria)=>{
+const sidebarCategorias = document.getElementById('sidebarCategorias');
+const filtrarCategoria = ()=>{
     canvas.innerHTML = '';
-    const productoCat = productos.find((producto) => producto.nombre === categoria);
-    const sidebarCat = sidebarArray.options[sidebarArray.selectedIndex].text;
+    const sidebarCat = sidebarCategorias[sidebarCategorias.selectedIndex].value;
     for (let producto of productos) {
-        if (productoCat === sidebarCat) {
+        let productoCat = producto.nombre;
+        if (sidebarCat === productoCat){
             const card = document.createElement("div");
             card.innerHTML += `
             <div class="card" style="width: 18rem;" id="card${producto.idProducto}">
@@ -262,17 +313,48 @@ const filtrarCategoria = (categoria)=>{
                 console.log(botonAdd);
                 agregarAlCarrito(producto.idProducto);
             });
-        };
+        } else if (sidebarCat === "Todas") {
+            canvas.innerHTML = '';
+            renderizarCatalogo();
+        };            
     };
 };
-/*HAY QUE REVISAR LA FORMULA Y EL LLAMADO*/
+
 //Filtrar por categoría de sidebar.
 sidebarCategorias.addEventListener('click', ()=>{
-    let categoria = sidebarArray.options[sidebarArray.selectedIndex].text;
-    console.log(categoria);
-    filtrarCategoria(categoria);
+    filtrarCategoria();
 });
 
 
+// Boton sticky scroll to top.
+const scrollToTopButton = document.getElementById('js-top');
 
+// Función que muestra el boton si scrolleamos pasada la altura de la ventana inicial.
+const scrollFunc = () => {
+    // Obtenemos el valor actual de scroll vertical.
+    let y = window.scrollY;
+    // Si el valor es mayor a la altura de la ventan, agregamos la clase para mostrar el boton.
+    if (y > 0) {
+    scrollToTopButton.className = "top-link show";
+    } else {
+    scrollToTopButton.className = "top-link hide";
+    }
+};
 
+window.addEventListener("scroll", scrollFunc);
+
+const scrollToTop = () => {
+    // Declaramos una variable para el n° de pixels de distancia al tope del document.
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    // Si el n° es mayor a 0, scrolleamos de vuelta a 0, lo que es el tope del cocument.
+    if (c > 0) {
+    // ScrollTo necesita los parámetros "x" e "y" (coordenadas).
+    window.scrollTo(0, 0);
+    }
+};
+
+// Cuando se clickea el boton, llamamos a la función ScrolltoTop
+scrollToTopButton.onclick = function(e) {
+    e.preventDefault();
+    scrollToTop();
+}
