@@ -6,10 +6,47 @@ const search = document.getElementById("search");
 //Variables de Carrito:
 let carrito = [];
 const moneda = "$";
+const margen = 1.55;
 const carritoItems = document.getElementById('carritoItems');
 const subTotalItems = document.getElementById('subTotalItems');
 const total = document.getElementById('total');
 const iva = document.getElementById('iva');
+
+//API Dólar
+const apiDolar = "https://criptoya.com/api/dolar";
+const divDolar = document.getElementById("divDolar");
+let tc = 0;
+//Función async para obtener los tipos de cambio de la API.
+async function getUsd(apiDolar){
+    //Almacenamos response.
+    const response = await fetch(apiDolar);
+    //Almacenamos los datos en formato JSON.
+    const data = await response.json();
+    //Asignamos el valor obtenido a la variable tipo de cambio (tc).
+    tc = data.oficial;
+    console.log("El TC oficial es: " + tc);
+    //Limpiamos el lienzo y cargamos catálogo por defecto utilizando dicho tc.
+    canvas.innerHTML = '';
+    renderizarCatalogo();
+    //Mostramos carrito actual.
+    mostrarCarrito();
+    //Llamamos a la función para mostrar el tipo de cambio en panel lateral. 
+    mostrarTc(data);
+}
+
+//Función para mostrar tc en panel lateral.
+function mostrarTc(data) {
+    divDolar.innerHTML= `
+    <h3>Tipo de Cambio:</h3>
+    <p>Oficial = $${tc}</p>
+    `
+}
+//Llamamos a la función al momento de la carga del sitio.
+getUsd(apiDolar);
+//Luego definimos un período de actualización de 15 segundos. 
+setInterval( ()=> {
+    getUsd(apiDolar);
+}, 15000);
 
 
 //Función para renderizar el catálogo de productos.
@@ -21,7 +58,7 @@ function renderizarCatalogo() {
             <img src=${producto.imagen} class="card-img-top" alt="${producto.nombre}">
             <div class="card-body">
                 <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
-                <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
+                <p class="card-text">Precio x ${producto.unidad} = ${moneda}${(producto.precio * tc * margen).toFixed(2)}</p>
                 <button id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</button>
             </div>
         </div>
@@ -37,6 +74,7 @@ function renderizarCatalogo() {
     });
 }
 
+//Toaster para cuando se añade un producto al carrito.
 const Toast = Swal.mixin({
     toast: true,
     position: 'top-right',
@@ -45,7 +83,7 @@ const Toast = Swal.mixin({
         popup: 'colored-toast'
     },
     showConfirmButton: false,
-    timer: 1500,
+    timer: 2000,
     timerProgressBar: true
 })
 
@@ -76,12 +114,12 @@ const envioSelect = document.getElementById('envioSelect');
 const calculoTotal = () => {
     let totalCompra = 0; 
     carrito.forEach((producto) => {
-        totalCompra += producto.precio * producto.cantidad;
+        totalCompra += producto.precio * tc * margen * producto.cantidad;
     })
     
     const envio = parseInt(envioSelect[envioSelect.selectedIndex].value);
     const totalIva = parseFloat(((totalCompra + envio) * 0.21).toFixed(2));
-    subTotalItems.innerHTML = `${moneda}${totalCompra}`;
+    subTotalItems.innerHTML = `${moneda}${(totalCompra).toFixed(2)}`;
     iva.innerHTML = `${moneda}${totalIva}`;
     total.innerHTML = `${moneda}${parseFloat(totalCompra+envio+totalIva).toFixed(2)}`;
     const xItems = document.getElementById('xItems');
@@ -123,10 +161,10 @@ const mostrarCarrito = () => {
                 </button>
             </div>
             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h6 class="mb-0 text-end">${moneda}${producto.precio}</h6>
+                <h6 class="mb-0 text-end">${moneda}${(producto.precio * tc * margen).toFixed(2)}</h6>
             </div>
             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                <button id="del${producto.idProducto}" href="#!" class="btn btn-link px-2 text-muted"><i class="fas fa-times"></i></button>
+                <button id="del${producto.idProducto}" href="#!" class="btn btn-link px-2 text-muted"><i class="fa-solid fa-trash-can"></i></button>
             </div>  
         </div>
         <hr class="my-4">
@@ -205,10 +243,7 @@ if(localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
 };
 
-//Cargamos catálogo por defecto.
-renderizarCatalogo();
-//Mostramos carrito actual.
-mostrarCarrito();
+
 
 //Confirmación de compra.
 const checkoutBtn = document.getElementById('checkoutBtn');
@@ -233,6 +268,7 @@ checkoutBtn.addEventListener('click', ()=>{
                     confirmButtonText: "Aceptar",
                     confirmButtonColor: "#4ba722",
                 });
+                vaciarElCarrito();
             }
         })
     } else {
@@ -260,7 +296,7 @@ const filtrarBusqueda = ()=>{
                 <img src=${producto.imagen} class="card-img-top" alt="${producto.nombre}">
                 <div class="card-body">
                     <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
-                    <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
+                    <p class="card-text">Precio x ${producto.unidad} = ${moneda}${(producto.precio * tc * margen).toFixed(0)}</p>
                     <button id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</button>
                 </div>
             </div>
@@ -300,7 +336,7 @@ const filtrarCategoria = ()=>{
                 <img src=${producto.imagen} class="card-img-top" alt="${producto.nombre}">
                 <div class="card-body">
                     <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
-                    <p class="card-text">Precio x ${producto.unidad} = $${producto.precio}</p>
+                    <p class="card-text">Precio x ${producto.unidad} = ${moneda}${(producto.precio * tc * margen).toFixed(0)}</p>
                     <button id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</button>
                 </div>
             </div>
