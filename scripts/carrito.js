@@ -43,10 +43,10 @@ function mostrarTc(data) {
 }
 //Llamamos a la función al momento de la carga del sitio.
 getUsd(apiDolar);
-//Luego definimos un período de actualización de 15 segundos. 
+//Luego definimos un período de actualización de 60 segundos. 
 setInterval( ()=> {
     getUsd(apiDolar);
-}, 15000);
+}, 60000);
 
 
 //Función para renderizar el catálogo de productos.
@@ -58,7 +58,7 @@ function renderizarCatalogo() {
             <img src=${producto.imagen} class="card-img-top" alt="${producto.nombre}">
             <div class="card-body">
                 <h5 class="card-title">${producto.nombre} x ${producto.tipo}</h5>
-                <p class="card-text">Precio x ${producto.unidad} = ${moneda}${(producto.precio * tc * margen).toFixed(2)}</p>
+                <p class="card-text">Precio x ${producto.unidad} = ${moneda}${(producto.precio * tc * margen).toFixed(0)}</p>
                 <button id="agregarBtn${producto.idProducto}" class="btn btn-primary">Agregar</button>
             </div>
         </div>
@@ -161,7 +161,7 @@ const mostrarCarrito = () => {
                 </button>
             </div>
             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h6 class="mb-0 text-end">${moneda}${(producto.precio * tc * margen).toFixed(2)}</h6>
+                <h6 class="mb-0 text-end">${moneda}${(producto.precio * tc * margen).toFixed(0)}</h6>
             </div>
             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                 <button id="del${producto.idProducto}" href="#!" class="btn btn-link px-2 text-muted"><i class="fa-solid fa-trash-can"></i></button>
