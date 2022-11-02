@@ -118,10 +118,10 @@ const calculoTotal = () => {
     })
     
     const envio = parseInt(envioSelect[envioSelect.selectedIndex].value);
-    const totalIva = parseFloat(((totalCompra + envio) * 0.21).toFixed(2));
-    subTotalItems.innerHTML = `${moneda}${(totalCompra).toFixed(2)}`;
+    const totalIva = parseFloat(((totalCompra + envio) * 0.21).toFixed(0));
+    subTotalItems.innerHTML = `${moneda}${(totalCompra).toFixed(0)}`;
     iva.innerHTML = `${moneda}${totalIva}`;
-    total.innerHTML = `${moneda}${parseFloat(totalCompra+envio+totalIva).toFixed(2)}`;
+    total.innerHTML = `${moneda}${(totalCompra + envio + totalIva).toFixed(0)}`;
     const xItems = document.getElementById('xItems');
     xItems.innerHTML = `${carrito.length} item(s)`;
 }
