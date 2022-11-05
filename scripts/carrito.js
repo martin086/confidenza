@@ -17,7 +17,7 @@ const apiDolar = "https://criptoya.com/api/dolar";
 const divDolar = document.getElementById("divDolar");
 let tc = 0;
 //Función async para obtener los tipos de cambio de la API.
-async function getUsd(apiDolar){
+async function getUsd(){
     //Almacenamos response.
     const response = await fetch(apiDolar);
     //Almacenamos los datos en formato JSON.
